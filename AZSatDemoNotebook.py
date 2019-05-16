@@ -23,9 +23,9 @@ from azure.storage.blob import BlockBlobService
 blob_account_name = ""  # fill in your blob account name
 blob_account_key = ""  # fill in your blob account key
 mycontainer = ""  # fill in the container name
-myblobname = "TestData_semi.txt"  # fill in the blob name for use with file input
+myblobname = "TestData_semi.txt"  # fill in the blob name for use with file input - must be semicolon delimited!
 mydatafile = "TestData_semi.txt"  # fill in the output file name
-myoutputfile = "TestData_semi_out.csv"
+myoutputfile = "TestData_semi_out.csv" #output is Comma delimited
 
 # cognitive service configs
 subscription_key_cognitive_service = ""  # fill in your subscription key
@@ -157,6 +157,10 @@ def run_pipeline():
       try:
 
           website_url = row['website']# test url "http://praiaazul.com/"  # row['website']
+	  http = "http"
+	  # original samples start with HTTP, but some of scraped addresses were missing it- this is a quick fix
+          if website_url[:4] != http:
+            website_url = "http://" + website_url
           print(website_url)
           # 1. browse the website and store the native text
           body_text = getWebsiteText(website_url)
