@@ -1,0 +1,2 @@
+Name;Address;City; Zip;State;Country;Phone;Geo;Tags;website;Created;SourceText;EnglishText;Entities;KeyPhrases
+Praia Azul;;;;;Portugal;;;"Hotel, restaurant,";http://praiaazul.com/;Human;;;;
