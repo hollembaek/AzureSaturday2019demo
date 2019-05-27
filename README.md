@@ -6,3 +6,10 @@ https://azuresaturday.de/sessions/
 
 Source materials on Databricks from within Data Factory:
 https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-databricks-notebook
+
+There are two python notebook formats here which should contain the same code.
+In the databricks environment you will need to add the following PyPI libraries to your cluster:
+azure.storage.blob
+bs4
+
+Have fun!
